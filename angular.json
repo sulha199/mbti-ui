@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "mbti-ui"
+    }
+  },
+  "defaultProject": "mbti-ui",
+  "cli": {
+    "analytics": "dbd6bc60-6dfa-4796-9a46-3502e6248101"
+  }
 }
