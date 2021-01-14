@@ -1,1 +1,8 @@
-<p>perspective works!</p>
+<ng-container *ngIf="(shouldShowPerspectiveResult$ | async) === false">
+    <h4>Discover Perspective</h4>
+    <div>Complete the 7 min test and get detailed report of your lenses on the world.</div>
+
+    <ng-container *ngIf="questions$ | async as questions">
+        <app-perspective-question-item *ngFor="let question of questions"></app-perspective-question-item>
+    </ng-container>
+</ng-container>
