@@ -1,0 +1,17 @@
+@mixin page-container {
+  position: relative;
+  display: block;
+  padding: 30px 70px;
+}
+
+@mixin bordered-box {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #f2f2f2;
+  border-radius: 4px;
+  padding: 27px 20px;
+}
+
+@mixin bordered-box-content {
+  max-width: 520px;
+}

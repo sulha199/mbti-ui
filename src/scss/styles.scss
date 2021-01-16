@@ -1,0 +1,23 @@
+/** Material CSS */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+  font-family: "Roboto";
+  font-size: 14px;
+  color: #495057;
+  box-sizing: border-box;
+}
+
+button {
+  &.mat-button,
+  &.mat-flat-button {
+    &.mat-primary:not(.mat-button-disabled) {
+      background-color: #3d59fa !important;
+    }
+  }
+
+  &.large {
+    font-size: 16px;
+    line-height: 40px;
+  }
+}
