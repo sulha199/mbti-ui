@@ -1,0 +1,66 @@
+@import "../../../scss/mixin.scss";
+
+:host {
+  @include page-container;
+}
+
+.box {
+  @include bordered-box;
+  padding: 60px 40px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.left {
+  .title {
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 30px;
+    color: #113264;
+  }
+  .subtitle {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+
+.right {
+  .result-table {
+    display: grid;
+    grid-template-columns: 150px 220px 150px;
+    gap: 20px;
+
+    .item-description {
+      font-weight: bold;
+      line-height: 1.5em;
+      color: #878787;
+    }
+
+    .item-bar {
+      display: flex;
+      box-sizing: border-box;
+      width: 218px;
+      height: 15px;
+      background: #e9ecef;
+      border-radius: 3px;
+      overflow: hidden;
+
+      .filled-bar {
+        background: #A920CB;
+        flex: 0 0 50%;
+      }
+
+      &.flex-end {
+        justify-content: flex-end;
+      }
+    }
+  }
+}

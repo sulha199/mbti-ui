@@ -1,0 +1,43 @@
+<ng-container *ngIf="participant$ | async as participant">
+  <div class="box">
+    <div class="left">
+      <h1 class="title">Your Perspective</h1>
+      <div class="subtitle">
+        Your Perspective Type is
+        {{ participant?.participantPerspective?.summary }}
+      </div>
+    </div>
+    <div class="right">
+      <div class="result-table">
+        <!-- IE -->
+        <div class="item-description">Introvesrion (I)</div>
+        <div class="item-bar"
+          [class.flex-end]="participant?.participantPerspective?.summary[0] === 'E'">
+          <div class="filled-bar"></div>
+        </div>
+        <div class="item-description">Extravesrion (E)</div>
+        <!-- SN -->
+        <div class="item-description">Sensing (S)</div>
+        <div class="item-bar"
+          [class.flex-end]="participant?.participantPerspective?.summary[1] === 'N'">
+          <div class="filled-bar"></div>
+        </div>
+        <div class="item-description">Intuition (N)</div>
+        <!-- TF -->
+        <div class="item-description">Thinking (T)</div>
+        <div class="item-bar"
+          [class.flex-end]="participant?.participantPerspective?.summary[2] === 'F'">
+          <div class="filled-bar"></div>
+        </div>
+        <div class="item-description">Feeling (F)</div>
+        <!-- JP -->
+        <div class="item-description">Judging (J)</div>
+        <div class="item-bar"
+          [class.flex-end]="participant?.participantPerspective?.summary[3] === 'P'">
+          <div class="filled-bar"></div>
+        </div>
+        <div class="item-description">Perceiving (P)</div>
+      </div>
+    </div>
+  </div>
+</ng-container>

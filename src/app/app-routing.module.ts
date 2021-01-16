@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PerspectiveComponent } from './containers';
+import { PerspectiveComponent, PerspectiveResultComponent } from './containers';
 
 const routes: Routes = [
   {
@@ -10,7 +10,11 @@ const routes: Routes = [
   },
   {
     path: 'perspective',
-    component: PerspectiveComponent
+    component: PerspectiveComponent,
+  },
+  {
+    path: 'result',
+    component: PerspectiveResultComponent
   }
 ];
 
