@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiPerspectiveService {
   readonly questionPath = 'question';
-  readonly perspectivePath = 'perspective';
+  readonly perspectivePath = 'participant';
 
   constructor(private http: HttpClient) {}
 
