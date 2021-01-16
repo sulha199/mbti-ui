@@ -1,5 +1,6 @@
 import { FormArray, FormControl, FormGroup, Validators } from "@angular/forms";
 import { Question } from "../models";
+import { emailValidator } from "./validators";
 
 export function createAnswerForm(): FormGroup {
   return new FormGroup({
@@ -13,7 +14,7 @@ export function createAnswerForm(): FormGroup {
 export function createParticipantForm(questions: Question[]): FormGroup {
   return  new FormGroup({
     id: new FormControl(),
-    email: new FormControl(null, [Validators.required, Validators.email]),
+    email: new FormControl(null, [Validators.required, emailValidator]),
     timestamp: new FormControl(),
     participantAnswers: new FormArray(questions.map(() => createAnswerForm()))
   });
