@@ -1,8 +1,29 @@
-<ng-container *ngIf="(shouldShowPerspectiveResult$ | async) === false">
-    <h4>Discover Perspective</h4>
-    <div>Complete the 7 min test and get detailed report of your lenses on the world.</div>
+<ng-container *ngIf="participantForm$ | async as participantForm">
+  <h1 class="title">Discover Perspective</h1>
+  <div class="subtitle">Complete the 7 min test and get detailed report of your lenses on the world.</div>
 
-    <ng-container *ngIf="questions$ | async as questions">
-        <app-perspective-question-item *ngFor="let question of questions"></app-perspective-question-item>
-    </ng-container>
+  <form [formGroup]="participantForm" (submit)="submit(participantForm)" class="form">
+    <div class="question-list">
+      <ng-container *ngIf="questions$ | async as questions">
+        <div
+          *ngFor="let question of questions; let i=index"
+          class="bordered-box">
+          <app-perspective-question-item
+            [questionContent]="question"
+            [answerForm]="participantForm.controls.participantAnswers.controls[i]"
+            ></app-perspective-question-item>
+        </div>
+
+      </ng-container>
+
+      <div class="bordered-box email-box">
+        <div class="email">Your email</div>
+        <input matInput formControlName="email" placeholder="you@example.com">
+        <app-custom-form-error [control]="participantForm?.controls?.email"></app-custom-form-error>
+      </div>
+      <div class="button-area">
+        <button [disabled]="!participantForm.valid" mat-flat-button color="primary" class="large">Save & Continue</button>
+      </div>
+    </div>
+  </form>
 </ng-container>

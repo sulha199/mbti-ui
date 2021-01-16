@@ -1,0 +1,47 @@
+@import '../../../scss/mixin.scss';
+$item-padding: 0 10px;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.description {
+  @include bordered-box-content;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+}
+
+.options {
+  @include bordered-box-content;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+  .disagree {
+    padding: $item-padding;
+    color: #FA4344;
+    font-weight: bold;
+  }
+
+  .agree {
+    padding: $item-padding;
+    color: #00A079;
+    font-weight: bold;
+  }
+
+  .mat-radio-button {
+    padding: $item-padding;
+  }
+}
+
+.error {
+  mat-error {
+    padding: 0 5px;
+  }
+}

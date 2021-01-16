@@ -1,0 +1,73 @@
+@import "../../../scss/mixin.scss";
+
+:host {
+  @include page-container;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  color: #113264;
+  margin-bottom: 18px;
+}
+
+.subtitle {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.bordered-box {
+  @include bordered-box;
+}
+
+.form {
+  padding: 0;
+  margin: 40px auto 0 auto;
+  width: 90%;
+  max-width: 740px;
+}
+
+.question-list {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+.email-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  .email {
+    @include bordered-box-content;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  input {
+    @include bordered-box-content;
+    font-size: 18px;
+    max-width: 570px;
+    min-width: 80%;
+    height: 48px;
+    border: 2px solid #aaaaaa;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 10px 20px;
+  }
+
+}
+
+.button-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+}
