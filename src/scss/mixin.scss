@@ -2,6 +2,7 @@
   position: relative;
   display: block;
   padding: 30px 70px;
+  box-sizing: border-box;
 }
 
 @mixin bordered-box {
@@ -13,5 +14,6 @@
 }
 
 @mixin bordered-box-content {
+  box-sizing: border-box;
   max-width: 520px;
 }
