@@ -2,7 +2,7 @@
   <div class="options">
     <div class="disagree">Disagree</div>
     <mat-radio-group [formControl]="answerForm?.controls?.score">
-      <mat-radio-button *ngFor="let item of scoreArray; let i=index" [value]="i"></mat-radio-button>
+      <mat-radio-button *ngFor="let item of scoreArray; let i=index" [value]="i + 1"></mat-radio-button>
     </mat-radio-group>
     <div class="agree">Agree</div>
   </div>
