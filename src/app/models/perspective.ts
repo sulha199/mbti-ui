@@ -32,10 +32,12 @@ export interface ParticipantRequest {
     ParticipantAnswers: ParticipantAnswer[];
 }
 
+export type QuestionDimension = 'EI' | 'SN' | 'TF' | 'JP';
+export type QuestionMeaning = 'E' |'I' | 'S' | 'N' | 'T' | 'F' | 'J' | 'P';
 export interface Question {
     id?: number;
     question: string;
-    dimension: string;
+    dimension: QuestionDimension;
     direction: 1 | -1;
-    meaning: string;
+    meaning: QuestionMeaning;
 }
