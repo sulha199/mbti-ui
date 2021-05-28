@@ -13,6 +13,7 @@
     "array-type": false,
     "arrow-return-shorthand": true,
     "curly": true,
+    "defocus": true,
     "deprecation": {
       "severity": "warning"
     },
@@ -68,6 +69,10 @@
       true,
       "single"
     ],
+    "rxjs-prefer-angular-takeuntil": {
+      "severity": "warn"
+    },
+    "rxjs-no-unsafe-takeuntil": true,
     "semicolon": {
       "options": [
         "always"
