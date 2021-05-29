@@ -18,7 +18,7 @@ import { PerspectiveComponent } from './perspective.component';
 import { Participant } from 'src/app/models';
 import { createParticipantForm } from 'src/app/utils';
 
-describe('PerspectiveComponent', () => {
+fdescribe('PerspectiveComponent', () => {
   let component: PerspectiveComponent;
   let fixture: ComponentFixture<PerspectiveComponent>;
   let radioGroupDebugElements: DebugElement[];

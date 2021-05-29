@@ -58,5 +58,8 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged && lint-staged"
     }
+  },
+  "lint-staged": {
+    "*": "tslint"
   }
 }
