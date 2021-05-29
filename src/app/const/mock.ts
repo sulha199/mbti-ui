@@ -19,6 +19,7 @@ export const mockParticipant: Participant = {
   email: 'xx@email.com',
   participantAnswers: mockQuestions.map(question => {
       return {
+          id: null,
           question_id: question.id,
           participant_id: null,
           score: randomNumber(6) + 1
