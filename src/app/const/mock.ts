@@ -3,15 +3,15 @@ import { randomNumber } from '../utils';
 
 export const questionDimensions: QuestionDimension[] = ['EI', 'SN', 'TF', 'JP'];
 
-export const mockQuestions: Question[] = new Array(9).map((_, index) => {
+export const mockQuestions: Question[] = (new Array(9)).fill(null).map((_, index) => {
   const dimension =
     questionDimensions[randomNumber(questionDimensions.length - 1)];
   return {
-    id: index,
+    id: index + 1,
     dimension,
     direction: index % 2 === 0 ? 1 : -1,
     question: `Question #${index + 1}`,
-    meaning: dimension[index % 2],
+    meaning: dimension.toString()[index % 2],
   } as Question;
 });
 

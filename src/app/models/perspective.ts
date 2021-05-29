@@ -12,11 +12,13 @@ export interface ParticipantPerspective {
     summary: string;
 }
 
+export type ParticipantAnswerScore = 1 | 2 | 3 | 4 |5 | 6 | 7;
+
 export interface ParticipantAnswer {
     id?: number;
     participant_id: number;
     question_id: number;
-    score: 1 | 2 | 3 | 4 |5 | 6 | 7;
+    score: ParticipantAnswerScore;
 }
 
 export interface Participant {
