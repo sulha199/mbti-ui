@@ -4,7 +4,7 @@ import { ApiPerspectiveService } from './api-perspective.service';
 import { mockParticipant, mockParticipantWithPerspective, mockQuestions } from 'src/app/const';
 import { environment } from 'src/environments/environment';
 
-fdescribe('ApiPerspectiveService', () => {
+describe('ApiPerspectiveService', () => {
   let service: ApiPerspectiveService;
   let httpMock: HttpTestingController;
 
