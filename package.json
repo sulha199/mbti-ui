@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "pre-commit": "pretty-quick --staged && lint-staged",
-    "postinstall": "husky install"
+    "postinstall": "husky install .config/husky"
   },
   "private": true,
   "dependencies": {
