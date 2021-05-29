@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RouteList } from 'src/app/const';
 import { PerspectiveService } from 'src/app/services';
 
 @Component({
@@ -24,7 +25,7 @@ export class PerspectiveResultComponent implements OnInit {
     if (!participant ||
         !participant.participantPerspective ||
         !participant.participantPerspective.summary) {
-      this.router.navigate(['perspective']);
+      this.router.navigate([RouteList.perspective]);
     }
   }
 
