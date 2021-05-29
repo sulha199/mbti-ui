@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "pre-commit": "pretty-quick --staged && lint-staged"
   },
   "private": true,
   "dependencies": {
@@ -56,7 +57,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && lint-staged"
+      "pre-commit": "pre-commit"
     }
   },
   "lint-staged": {
