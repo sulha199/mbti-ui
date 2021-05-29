@@ -23,8 +23,8 @@ import { PerspectiveComponent } from './perspective.component';
 import { Participant } from 'src/app/models';
 import { createParticipantForm } from 'src/app/utils';
 
-fdescribe('PerspectiveComponent', () => {
-let component: PerspectiveComponent;   
+describe('PerspectiveComponent', () => {
+  let component: PerspectiveComponent;
   let fixture: ComponentFixture<PerspectiveComponent>;
   let radioGroupDebugElements: DebugElement[];
   let buttonDebugElement: DebugElement;
@@ -102,7 +102,7 @@ let component: PerspectiveComponent;
 function fillForm(
   radioGroupDebugElements: DebugElement[],
   emailInputElement: HTMLInputElement
-) {
+): void {
   radioGroupDebugElements.forEach((group, index) => {
     const radioDebugElements = group.queryAll(By.directive(MatRadioButton));
     const radioLabelElements: HTMLLabelElement[] = radioDebugElements.map(
