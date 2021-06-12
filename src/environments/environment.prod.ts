@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api: 'http://127.0.0.1:8000/index.php?r=api',
+  api: 'https://mbti-api-yii.000webhostapp.com/?r=api',
 };
