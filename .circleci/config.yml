@@ -29,11 +29,11 @@ jobs:
           fingerprints:
             - "a5:a6:8b:1e:ff:a6:d5:f7:03:fa:75:a3:14:68:f4:d3"
       - run:
-          name: Clone gh-pages branch
+          name: Clone gh-page branch
           working_directory: ~/repo/deploy
           command: |
             echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
-            git clone -b gh-pages $CIRCLE_REPOSITORY_URL .
+            git clone -b gh-page $CIRCLE_REPOSITORY_URL .
       - run:
           name: delete folder with current branch name if exist
           command: rm -rf ~/repo/deploy/${CIRCLE_BRANCH} && ls ~/repo/deploy/
