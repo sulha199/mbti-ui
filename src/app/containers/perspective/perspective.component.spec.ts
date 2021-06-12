@@ -11,17 +11,17 @@ import { MatInput } from '@angular/material/input';
 import { By } from '@angular/platform-browser';
 import { AppModule } from 'src/app/app.module';
 import {
-  mockApiPerspectiveProvider,
   mockParticipant,
   mockParticipantWithPerspective,
   mockQuestions,
-  mockRouterProvider,
   RouteList,
 } from 'src/app/const';
 
 import { PerspectiveComponent } from './perspective.component';
 import { Participant } from 'src/app/models';
 import { createParticipantForm } from 'src/app/utils';
+import { mockRouterProvider } from 'src/app/const/mock-angular-providers.spec';
+import { mockApiPerspectiveProvider } from 'src/app/const/mock-app-provider.spec';
 
 describe('PerspectiveComponent', () => {
   let component: PerspectiveComponent;

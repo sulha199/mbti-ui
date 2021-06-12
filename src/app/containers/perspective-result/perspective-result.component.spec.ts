@@ -1,6 +1,10 @@
 import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
-import { mockParticipantWithPerspective, mockRouterProvider, spyNavigate } from 'src/app/const';
+import { mockParticipantWithPerspective } from 'src/app/const';
+import {
+  mockRouterProvider,
+  spyNavigate,
+} from 'src/app/const/mock-angular-providers.spec';
 
 import { PerspectiveResultComponent } from './perspective-result.component';
 
@@ -10,10 +14,9 @@ describe('PerspectiveResultComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PerspectiveResultComponent ],
-      providers: [ mockRouterProvider ]
-    })
-    .compileComponents();
+      declarations: [PerspectiveResultComponent],
+      providers: [mockRouterProvider],
+    }).compileComponents();
   });
 
   beforeEach(() => {

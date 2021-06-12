@@ -8,6 +8,8 @@ export const mockApiPerspectiveProvider = {
     submitPerspective: jasmine
       .createSpy('submitPerspective')
       .and.returnValue(of(mockParticipantWithPerspective)),
-    getQuestions: jasmine.createSpy('getQuestions').and.returnValue(of(mockQuestions))
+    getQuestions: jasmine
+      .createSpy('getQuestions')
+      .and.returnValue(of(mockQuestions)),
   },
 };
