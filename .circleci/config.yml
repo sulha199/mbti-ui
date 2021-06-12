@@ -1,0 +1,71 @@
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - deploy
+      - unit_test:
+          requires:
+            - deploy
+      
+jobs:
+  deploy:
+    docker:
+      - image: circleci/node:10.16.3-stretch-browsers
+        environment:
+          CHROME_BIN: "/usr/bin/google-chrome"
+    working_directory: ~/repo
+    steps:
+      # Checkout the code from the branch into the working_directory-
+      - checkout:
+      - restore_cache: # special step to restore the dependency cache
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run: npm install
+      - save_cache: # special step to save the dependency cache
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run: npm run build -- --no-progress --prod --base-href="https://sulha199.github.io/mbti-ui/${CIRCLE_BRANCH}/"
+      - add_ssh_keys:
+          fingerprints:
+            - "${GH_FINGERPRINT}"
+      - run:
+          name: Clone gh-page branch
+          working_directory: ~/repo/deploy
+          command: |
+            echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
+            git clone -b gh-page $CIRCLE_REPOSITORY_URL .
+      - run:
+          name: delete folder with current branch name if exist
+          command: rm -rf ~/repo/deploy/${CIRCLE_BRANCH} && ls ~/repo/deploy/
+      - run: mkdir ~/repo/deploy/${CIRCLE_BRANCH} && ls ~/repo/deploy/
+      - run:
+          name: move build result to deploy folder with branch-name
+          command: mv ./dist/mbti-ui/* ~/repo/deploy/${CIRCLE_BRANCH} -i && ls ~/repo/deploy/${CIRCLE_BRANCH}
+      - deploy:
+          name: Trigger commit and push
+          working_directory: ~/repo/deploy
+          command: |
+            git config credential.helper 'cache --timeout=120'
+            git config user.email "sulha199@gmail.com"
+            git config user.name "Deployment Bot"
+            git add .
+            git status
+            git commit --allow-empty -m "commited by CI [skip ci]"
+            # Push quietly to prevent showing the token in log
+            git push -q
+  unit_test:
+    docker:
+      - image: circleci/node:10.16.3-stretch-browsers
+        environment:
+          CHROME_BIN: "/usr/bin/google-chrome"
+    working_directory: ~/repo
+    steps:
+      # Checkout the code from the branch into the working_directory-
+      - checkout:
+      - restore_cache: # special step to restore the dependency cache
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run: npm install
+      - run: npm test -- --watch=false --no-progress --code-coverage
+      - store_artifacts:
+          path: ~/repo/coverage
+          destination: coverage
