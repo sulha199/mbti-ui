@@ -1,4 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { maxScore } from 'src/app/const';
 import { ParticipantAnswer, Question } from 'src/app/models';
@@ -7,21 +13,22 @@ import { showValidatorErrors } from 'src/app/utils';
 @Component({
   selector: 'app-perspective-question-item',
   templateUrl: './perspective-question-item.component.html',
-  styleUrls: ['./perspective-question-item.component.scss']
+  styleUrls: ['./perspective-question-item.component.scss'],
 })
-export class PerspectiveQuestionItemComponent implements OnInit {
+export class PerspectiveQuestionItemComponent implements OnChanges {
   @Input() answerForm: FormGroup;
   @Input() questionContent: Question;
 
-  scoreArray = new Array(maxScore);
+  scoreArray = new Array(maxScore).fill(null).map((_, index) => index + 1);
   showValidatorErrors = showValidatorErrors.bind(this);
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-    this.answerForm.patchValue({
-      question_id: this.questionContent.id
-    } as ParticipantAnswer);
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.questionContent) {
+      this.answerForm.patchValue({
+        question_id: this.questionContent && this.questionContent.id,
+      } as ParticipantAnswer);
+    }
   }
-
 }

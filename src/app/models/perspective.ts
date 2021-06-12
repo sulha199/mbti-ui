@@ -12,11 +12,13 @@ export interface ParticipantPerspective {
     summary: string;
 }
 
+export type ParticipantAnswerScore = 1 | 2 | 3 | 4 |5 | 6 | 7;
+
 export interface ParticipantAnswer {
     id?: number;
     participant_id: number;
     question_id: number;
-    score: 1 | 2 | 3 | 4 |5 | 6 | 7;
+    score: ParticipantAnswerScore;
 }
 
 export interface Participant {
@@ -32,10 +34,12 @@ export interface ParticipantRequest {
     ParticipantAnswers: ParticipantAnswer[];
 }
 
+export type QuestionDimension = 'EI' | 'SN' | 'TF' | 'JP';
+export type QuestionMeaning = 'E' |'I' | 'S' | 'N' | 'T' | 'F' | 'J' | 'P';
 export interface Question {
     id?: number;
     question: string;
-    dimension: string;
+    dimension: QuestionDimension;
     direction: 1 | -1;
-    meaning: string;
+    meaning: QuestionMeaning;
 }

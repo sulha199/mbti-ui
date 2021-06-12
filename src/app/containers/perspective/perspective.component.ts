@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { from, Observable } from 'rxjs';
 import { ApiPerspectiveService, PerspectiveService } from 'src/app/services';
 import { map } from 'rxjs/operators';
-import { createParticipantForm } from 'src/app/utils/perspetive';
+import { createParticipantForm } from 'src/app/utils';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { RouteList } from 'src/app/const';
 
 @Component({
   selector: 'app-perspective',
@@ -29,7 +30,7 @@ export class PerspectiveComponent implements OnInit {
     if (formGroup.valid) {
       this.apiPerspective.submitPerspective(formGroup.value).subscribe(result => {
         this.participant$.next(result);
-        this.router.navigate(['result']);
+        this.router.navigate([RouteList.result]);
       });
     }
   }
