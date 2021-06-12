@@ -40,7 +40,7 @@ jobs:
       - run: mkdir ~/repo/deploy/${CIRCLE_BRANCH} && ls ~/repo/deploy/
       - run:
           name: move build result to deploy folder with branch-name
-          command: mv ./dist/* ~/repo/deploy/${CIRCLE_BRANCH} -i && ls ~/repo/deploy/${CIRCLE_BRANCH}
+          command: mv ./dist/mbti-ui/* ~/repo/deploy/${CIRCLE_BRANCH} -i && ls ~/repo/deploy/${CIRCLE_BRANCH}
       - deploy:
           name: Trigger commit and push
           working_directory: ~/repo/deploy
