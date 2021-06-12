@@ -27,7 +27,7 @@ jobs:
       - run: npm run build -- --no-progress --prod --base-href="https://sulha199.github.io/mbti-ui/${CIRCLE_BRANCH}/"
       - add_ssh_keys:
           fingerprints:
-            - "84:98:77:eb:52:c3:1d:cf:be:b5:f0:eb:dd:4d:f8:da"
+            - "96:ed:cd:b7:a2:e1:31:f7:72:34:7a:b4:36:26:5c:fc"
       - run:
           name: Clone gh-page branch
           working_directory: ~/repo/deploy
