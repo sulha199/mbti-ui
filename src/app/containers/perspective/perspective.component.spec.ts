@@ -76,6 +76,7 @@ describe('PerspectiveComponent', () => {
     expect(buttonInstance.disabled).toBeFalsy();
     buttonDebugElement.nativeElement.click();
     fixture.detectChanges();
+    tick(300);
     expect(component.submit).toHaveBeenCalled();
   }));
 
