@@ -3,6 +3,8 @@
 ![ts](https://badgen.net/badge/Built%20With/TypeScript/blue)
 [![CircleCI](https://circleci.com/gh/sulha199/mbti-ui.svg?style=shield)](https://circleci.com/gh/sulha199/mbti-ui)
 ![](https://github.com/aleen42/badges/raw/master/src/jasmine.svg)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+
 ![Statements](https://img.shields.io/badge/statements-98.75%25-brightgreen.svg)
 ![Branches](https://img.shields.io/badge/branches-51.72%25-red.svg)
 ![Functions](https://img.shields.io/badge/functions-96.3%25-brightgreen.svg)
