@@ -6,6 +6,9 @@ workflows:
       - unit_test:
           requires:
             - deploy
+      - release:
+          requires:
+            - unit_test
 
 jobs:
   deploy:
