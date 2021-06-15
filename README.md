@@ -10,7 +10,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
 
-## Development server
+## Demo site
+
+[https://sulha199.github.io/mbti-ui/master/perspective](https://sulha199.github.io/mbti-ui/master/perspective)
+
+Because of the php hosting limitation on handling the POST request, the app will not be able to submit the survey into backend.
+
+You are able to run app in full stack using docker by cloning this repo [https://github.com/sulha199/mbti-docker](https://github.com/sulha199/mbti-docker).
+
+The other way is by [running the UI](##running-ui-apps) and API ([https://github.com/sulha199/mbti-api](https://github.com/sulha199/mbti-api)) separately by yourself.
+
+## Running UI apps
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
