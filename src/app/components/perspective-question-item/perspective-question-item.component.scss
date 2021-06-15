@@ -1,12 +1,15 @@
-@import '../../../scss/mixin.scss';
-$item-padding: 0 10px;
+@import "../../../scss/mixin.scss";
+$item-padding: 5px 10px;
 
 :host {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
+  gap: 0 40px;
+  @media (orientation: landscape) {
+    flex-direction: column;
+  }
 }
 
 .description {
@@ -18,25 +21,41 @@ $item-padding: 0 10px;
 }
 
 .options {
+  width: 100px;
   @include bordered-box-content;
   display: flex;
+  flex-direction: column-reverse;
   justify-content: center;
+  align-items: center;
   margin-top: 20px;
 
   .disagree {
     padding: $item-padding;
-    color: #FA4344;
+    color: #fa4344;
     font-weight: bold;
+  }
+
+  mat-radio-group {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
   }
 
   .agree {
     padding: $item-padding;
-    color: #00A079;
+    color: #00a079;
     font-weight: bold;
   }
 
   .mat-radio-button {
     padding: $item-padding;
+  }
+
+  @media (orientation: landscape) {
+    flex-direction: row;
+    mat-radio-group {
+      flex-direction: row;
+    }
   }
 }
 
