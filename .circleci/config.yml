@@ -70,3 +70,11 @@ jobs:
       - store_artifacts:
           path: ~/repo/coverage
           destination: coverage
+  release:
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - run: npm install
+      # Run optional required steps before releasing
+      - run: npx semantic-release
