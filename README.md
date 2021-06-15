@@ -12,7 +12,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Demo site
 
-[https://sulha199.github.io/mbti-ui/master/perspective](https://sulha199.github.io/mbti-ui/master/perspective)
+[https://sulha199.github.io/mbti-ui/master](https://sulha199.github.io/mbti-ui/master)
 
 Because of the php hosting limitation on handling the POST request, the app will not be able to submit the survey into backend.
 
