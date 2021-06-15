@@ -1,5 +1,7 @@
 # MbtiUi
 
+[![CircleCI](https://circleci.com/gh/sulha199/mbti-ui.svg?style=svg)](https://circleci.com/gh/sulha199/mbti-ui)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
 
 ## Development server
