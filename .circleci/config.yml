@@ -82,4 +82,4 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
       - run: npm install
       # Run optional required steps before releasing
-      - run: npx semantic-release --debug
+      - run: npx semantic-release
