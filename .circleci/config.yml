@@ -6,7 +6,7 @@ workflows:
       - unit_test:
           requires:
             - deploy
-      
+
 jobs:
   deploy:
     docker:
@@ -66,6 +66,7 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
       - run: npm install
       - run: npm test -- --watch=false --no-progress --code-coverage
+      - run: npm run make-badges
       - store_artifacts:
           path: ~/repo/coverage
           destination: coverage

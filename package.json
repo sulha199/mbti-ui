@@ -9,7 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "pre-commit": "pretty-quick --staged && lint-staged",
-    "postinstall": "husky install .config/husky"
+    "postinstall": "husky install .config/husky",
+    "make-badges": "istanbul-badges-readme --coverageDir=./coverage/mbti-ui"
   },
   "private": true,
   "dependencies": {
@@ -38,6 +39,7 @@
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
     "husky": "^6.0.0",
+    "istanbul-badges-readme": "^1.4.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~5.0.0",

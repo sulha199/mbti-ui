@@ -1,6 +1,10 @@
 # MbtiUi
 
 [![CircleCI](https://circleci.com/gh/sulha199/mbti-ui.svg?style=shield)](https://circleci.com/gh/sulha199/mbti-ui)
+![Statements](https://img.shields.io/badge/statements-98.75%25-brightgreen.svg)
+![Branches](https://img.shields.io/badge/branches-51.72%25-red.svg)
+![Functions](https://img.shields.io/badge/functions-96.3%25-brightgreen.svg)
+![Lines](https://img.shields.io/badge/lines-98.57%25-brightgreen.svg)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
 
