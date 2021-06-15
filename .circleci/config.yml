@@ -78,6 +78,8 @@ jobs:
       - image: circleci/node:8
     steps:
       - checkout
+      - restore_cache: # special step to restore the dependency cache
+          key: dependency-cache-{{ checksum "package.json" }}
       - run: npm install
       # Run optional required steps before releasing
-      - run: npx semantic-release
+      - run: npx semantic-release --debug
