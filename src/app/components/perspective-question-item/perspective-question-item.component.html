@@ -1,8 +1,15 @@
-  <div class="description">{{questionContent?.question}}</div>
-  <div class="options">
-    <div class="disagree">Disagree</div>
-    <mat-radio-group [formControl]="answerForm?.controls?.score">
-      <mat-radio-button *ngFor="let item of scoreArray; let i=index" [value]="item"></mat-radio-button>
-    </mat-radio-group>
-    <div class="agree">Agree</div>
-  </div>
+<div class="description">{{ questionContent?.question }}</div>
+<div class="options">
+  <div class="options__disagree">Disagree</div>
+  <mat-radio-group
+    [formControl]="answerForm?.controls?.score"
+    class="options__radio-group"
+  >
+    <mat-radio-button
+      *ngFor="let item of scoreArray; let i = index"
+      [value]="item"
+      class="options__radio-item"
+    ></mat-radio-button>
+  </mat-radio-group>
+  <div class="options__agree">Agree</div>
+</div>

@@ -29,31 +29,31 @@ $item-padding: 5px 10px;
   align-items: center;
   margin-top: 20px;
 
-  .disagree {
+  &__disagree {
     padding: $item-padding;
     color: #fa4344;
     font-weight: bold;
   }
 
-  mat-radio-group {
+  &__radio-group {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
   }
 
-  .agree {
+  &__agree {
     padding: $item-padding;
     color: #00a079;
     font-weight: bold;
   }
 
-  .mat-radio-button {
+  &__radio-item {
     padding: $item-padding;
   }
 
   @media (orientation: landscape) {
     flex-direction: row;
-    mat-radio-group {
+    &__radio-group {
       flex-direction: row;
     }
   }

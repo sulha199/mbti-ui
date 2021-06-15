@@ -1,42 +1,58 @@
 <ng-container *ngIf="participant$ | async as participant">
   <div class="box">
-    <div class="left">
-      <h1 class="title">Your Perspective</h1>
-      <div class="subtitle">
+    <div class="box__left">
+      <h1 class="box__left__title">Your Perspective</h1>
+      <div class="box__left__subtitle">
         Your Perspective Type is
         {{ participant?.participantPerspective?.summary }}
       </div>
     </div>
-    <div class="right">
+    <div class="box__right">
       <div class="result-table">
         <!-- IE -->
-        <div class="item-description">Introversion (I)</div>
-        <div class="item-bar"
-          [class.flex-end]="participant?.participantPerspective?.summary[0] === 'E'">
-          <div class="filled-bar"></div>
+        <div class="result-table__item-description">Introversion (I)</div>
+        <div
+          class="result-table__item-bar"
+          [class.flex-end]="
+            participant?.participantPerspective?.summary[0] === 'E'
+          "
+        >
+          <div class="result-table__item-bar__filled-bar"></div>
         </div>
-        <div class="item-description">Extraversion (E)</div>
+        <div class="result-table__item-description">Extraversion (E)</div>
         <!-- SN -->
-        <div class="item-description">Sensing (S)</div>
-        <div class="item-bar"
-          [class.flex-end]="participant?.participantPerspective?.summary[1] === 'N'">
-          <div class="filled-bar"></div>
+        <div class="result-table__item-description">Sensing (S)</div>
+        <div
+          class="result-table__item-bar"
+          [class.flex-end]="
+            participant?.participantPerspective?.summary[1] === 'N'
+          "
+        >
+          <div class="result-table__item-bar__filled-bar"></div>
         </div>
-        <div class="item-description">Intuition (N)</div>
+        <div class="result-table__item-description">Intuition (N)</div>
         <!-- TF -->
-        <div class="item-description">Thinking (T)</div>
-        <div class="item-bar"
-          [class.flex-end]="participant?.participantPerspective?.summary[2] === 'F'">
-          <div class="filled-bar"></div>
+        <div class="result-table__item-description">Thinking (T)</div>
+        <div
+          class="result-table__item-bar"
+          [class.flex-end]="
+            participant?.participantPerspective?.summary[2] === 'F'
+          "
+        >
+          <div class="result-table__item-bar__filled-bar"></div>
         </div>
-        <div class="item-description">Feeling (F)</div>
+        <div class="result-table__item-description">Feeling (F)</div>
         <!-- JP -->
-        <div class="item-description">Judging (J)</div>
-        <div class="item-bar"
-          [class.flex-end]="participant?.participantPerspective?.summary[3] === 'P'">
-          <div class="filled-bar"></div>
+        <div class="result-table__item-description">Judging (J)</div>
+        <div
+          class="result-table__item-bar"
+          [class.flex-end]="
+            participant?.participantPerspective?.summary[3] === 'P'
+          "
+        >
+          <div class="result-table__item-bar__filled-bar"></div>
         </div>
-        <div class="item-description">Perceiving (P)</div>
+        <div class="result-table__item-description">Perceiving (P)</div>
       </div>
     </div>
   </div>
