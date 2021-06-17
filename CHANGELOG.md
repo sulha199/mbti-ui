@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/sulha199/mbti-ui/compare/v1.0.0...v1.0.1) (2021-06-17)
+
+
+### Bug Fixes
+
+* **unnecessary-api-call:** apply shareReplay ([40edd02](https://github.com/sulha199/mbti-ui/commit/40edd02f1298f800533887088a8f4f7a48b9b891))
+
 # 1.0.0 (2021-06-15)
 
 
