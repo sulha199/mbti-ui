@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { from, Observable } from 'rxjs';
 import { ApiPerspectiveService, PerspectiveService } from 'src/app/services';
-import { map } from 'rxjs/operators';
+import { map, shareReplay } from 'rxjs/operators';
 import { createParticipantForm } from 'src/app/utils';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -10,34 +10,33 @@ import { RouteList } from 'src/app/const';
 @Component({
   selector: 'app-perspective',
   templateUrl: './perspective.component.html',
-  styleUrls: ['./perspective.component.scss']
+  styleUrls: ['./perspective.component.scss'],
 })
 export class PerspectiveComponent implements OnInit {
   readonly participant$ = this.perspectiveService.participant$;
-  readonly questions$ = this.apiPerspective.getQuestions();
+  readonly questions$ = this.apiPerspective.getQuestions().pipe(shareReplay(1));
   readonly participantForm$ = this.getForm();
 
   constructor(
     private perspectiveService: PerspectiveService,
     private apiPerspective: ApiPerspectiveService,
     private router: Router
-  ) { }
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   submit(formGroup: FormGroup): void {
     if (formGroup.valid) {
-      this.apiPerspective.submitPerspective(formGroup.value).subscribe(result => {
-        this.participant$.next(result);
-        this.router.navigate([RouteList.result]);
-      });
+      this.apiPerspective
+        .submitPerspective(formGroup.value)
+        .subscribe((result) => {
+          this.participant$.next(result);
+          this.router.navigate([RouteList.result]);
+        });
     }
   }
 
   getForm(): Observable<FormGroup> {
-    return this.questions$.pipe(
-      map(createParticipantForm)
-    );
+    return this.questions$.pipe(map(createParticipantForm));
   }
 }
